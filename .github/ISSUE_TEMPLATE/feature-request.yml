@@ -1,0 +1,23 @@
+name: Feature/Component Request
+description: Request a new feature or component
+title: "[Feature Request]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please provide as much information as possible about the feature/component you would like to see.
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Provide a clear and concise description of the feature/component you'd like to see.
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem does this solve?
+      description: Describe the problem you're having.
+    validations:
+      required: true

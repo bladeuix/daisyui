@@ -1,0 +1,76 @@
+name: Format Code
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  format:
+    name: Format code
+    runs-on: ubuntu-latest
+
+    env:
+      PR_NUMBER: ${{ github.event.number }}
+      SOURCE_BRANCH: ${{ github.head_ref }}
+      FIXER_BRANCH: 'format-fixes/$GITHUB_HEAD_REF'
+      TITLE: 'style: apply code format fixes'
+      DESCRIPTION: 'This merge request applies PHP code style fixes from an analysis carried out through GitHub Actions.'
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.5
+          extensions: dom, curl, libxml, mbstring, zip
+          coverage: pcov
+
+      - name: Setup problem matchers
+        run: |
+          echo "::add-matcher::${{ runner.tool_cache }}/php.json"
+          echo "::add-matcher::${{ runner.tool_cache }}/phpunit.json"
+
+      - name: Install dependencies
+        run: |
+          composer require "laravel/framework:${{ matrix.laravel }}" --no-interaction --no-update
+          composer update --${{ matrix.stability }} --prefer-dist --no-interaction
+
+      - name: Execute tests
+        run: composer format
+
+      - name: Prepare Git User
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -B "${{ env.FIXER_BRANCH }}"
+
+      - name: Create Fixer PR
+        run: |
+          if [[ -z $(git status --porcelain) ]]; then
+            echo "Nothing to fix.. Exiting."
+            exit 0
+          fi
+
+          # Check for existing PRs
+          OPEN_FIXER_PRS=$(gh pr list \
+            --head "${{ env.FIXER_BRANCH }}" \
+            --json number \
+            --jq length)
+
+          git commit -am "${{ env.TITLE }}"
+          git push origin "${{ env.FIXER_BRANCH }}" --force
+
+          if [ "${OPEN_FIXER_PRS}" -eq "0" ]; then
+            gh pr create \
+              --head "${{ env.FIXER_BRANCH }}" \
+              --base "${{ env.SOURCE_BRANCH }}" \
+              --title "${{ env.TITLE }}" \
+              --body "${{ env.DESCRIPTION }}
+
+          Triggered by #${{ env.PR_NUMBER }}"
+          fi
+          exit 1
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
