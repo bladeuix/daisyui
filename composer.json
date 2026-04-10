@@ -1,7 +1,7 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
     "name": "bladeuix/daisyui",
-    "description": "LadaisyUI Blade Components for BladeUix",
+    "description": "A Laravel blade component library based on daisyUI.",
     "keywords": [
         "laravel",
         "daisyui",
