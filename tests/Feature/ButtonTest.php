@@ -45,3 +45,17 @@ it(description: 'can render button with state class', closure: function () {
 
     $view->assertSee(value: '<button class="btn btn-md btn-disabled">', escape: false);
 });
+
+it(description: 'can render button with all shape classes', closure: function (string $shape, string $class) {
+    $view = $this->component(
+        componentClass: Button::class,
+        data: ['shape' => $shape]
+    );
+
+    $view->assertSee(value: sprintf('<button class="btn btn-md %s">', $class), escape: false);
+})->with([
+    ['square', 'btn-square'],
+    ['circle', 'btn-circle'],
+    ['wide', 'btn-wide'],
+    ['block', 'btn-block'],
+]);

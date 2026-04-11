@@ -10,10 +10,11 @@ use Illuminate\Contracts\View\View;
 class Button extends Component
 {
     public function __construct(
-        public ?string $slot  = null,
-        public ?string $size  = null,
+        public ?string $slot = null,
+        public ?string $size = null,
         public ?string $color = null,
         public ?string $state = null,
+        public ?string $shape = null,
     ) {
     }
 
@@ -29,7 +30,19 @@ class Button extends Component
             $this->sizeClass(),
             $this->colorClass(),
             $this->stateClass(),
+            $this->shapeClass(),
         ]);
+    }
+
+    private function shapeClass(): string
+    {
+        return match ($this->shape) {
+            'square' => 'btn-square',
+            'circle' => 'btn-circle',
+            'wide'   => 'btn-wide',
+            'block'  => 'btn-block',
+            default  => '',
+        };
     }
 
     private function stateClass(): string
