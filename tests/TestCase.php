@@ -1,9 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace BladeUix\DaisyUi\Tests;
 
-use BladeUix\DaisyUi\Providers\DaisyUiServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
+use BladeUix\DaisyUi\Providers\DaisyUiServiceProvider;
 
 class TestCase extends Orchestra
 {

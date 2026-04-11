@@ -13,7 +13,8 @@ class Button extends Component
         public ?string $size = null,
         public ?string $color = null,
         public mixed $slot = null,
-    ) {}
+    ) {
+    }
 
     public function render(): View
     {
