@@ -1,3 +1,3 @@
-<button {{ $attributes->class(['btn', $sizeClass, $colorClass])->merge() }}>
+<button {{ $attributes->class($classes())->merge() }}>
     {{ $slot }}
 </button>

@@ -27,19 +27,19 @@ Buttons allow the user to take actions or make choices.
 
 Use `size` attribute to control button size. e.g `lg` will render `btn-lg` class.
 
-```html
+```blade
 <x-daisyui::button size="xs">Extra Small</x-daisyui::button>
 ```
-```html
+```blade
 <x-daisyui::button size="sm">Small</x-daisyui::button>
 ```
-```html
+```blade
 <x-daisyui::button size="md">Medium</x-daisyui::button>
 ```
-```html
+```blade
 <x-daisyui::button size="lg">Large</x-daisyui::button>
 ```
-```html
+```blade
 <x-daisyui::button size="xl">Extra large</x-daisyui::button>
 ```
 
@@ -57,28 +57,28 @@ Use `size` attribute to control button size. e.g `lg` will render `btn-lg` class
 
 Use `color` attribute to control button color. e.g `primary` will render `btn-primary` class.
 
-```html
+```blade
 <x-daisyui::button color="neutral">Neutral</x-daisyui::button>
 ```
-```html
+```blade
 <x-daisyui::button color="primary">Primary</x-daisyui::button>
 ```
-```html
+```blade
 <x-daisyui::button color="secondary">Secondary</x-daisyui::button>
 ```
-```html
+```blade
 <x-daisyui::button color="accent">Accent</x-daisyui::button>
 ```
-```html
+```blade
 <x-daisyui::button color="info">Info</x-daisyui::button>
 ```
-```html
+```blade
 <x-daisyui::button color="success">Success</x-daisyui::button>
 ```
-```html
+```blade
 <x-daisyui::button color="warning">Warning</x-daisyui::button>
 ```
-```html
+```blade
 <x-daisyui::button color="error">Error</x-daisyui::button>
 ```
 
@@ -95,13 +95,32 @@ Use `color` attribute to control button color. e.g `primary` will render `btn-pr
 </div>
 ```
 
+### Button states
+
+Use `state` attribute to control button state. e.g `active` will render `btn-active` class.
+
+```blade
+<x-daisyui::button">Normal</x-daisyui::button>
+```
+```blade
+<x-daisyui::button state="active">Active</x-daisyui::button>
+```
+```blade
+<x-daisyui::button state="disabled">Disabled</x-daisyui::button>
+```
+
+```html +parse
+<div class="component-preview">
+    <x-daisyui::button>Normal</x-daisyui::button>
+    <x-daisyui::button state="active">Active</x-daisyui::button>
+    <x-daisyui::button state="disabled">Disabled</x-daisyui::button>
+</div>
+```
+
 ## Attributes
 
 | Name     | Default | Options                                                            |
-|:---------|:--------|:-------------------------------------------------------------------|
-| `color`  | -       | neutral, primary, secondary, accent, info, success, warning, error |
-| `state`  | active  | active, disabled                                                   |
-| `size`   | md      | xs, sm, md, lg, xl                                                 |
+|:---------|:--------|:-------------------------------------------------------------------| 
 | `square` | false   | boolean                                                            |
 | `circle` | false   | boolean                                                            |
 | `block`  | false   | boolean                                                            |

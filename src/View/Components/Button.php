@@ -10,9 +10,10 @@ use Illuminate\Contracts\View\View;
 class Button extends Component
 {
     public function __construct(
-        public mixed $slot,
-        public ?string $size,
-        public ?string $color,
+        public ?string $slot  = null,
+        public ?string $size  = null,
+        public ?string $color = null,
+        public ?string $state = null,
     ) {
     }
 
@@ -21,7 +22,26 @@ class Button extends Component
         return view(view: 'daisyui::components.button');
     }
 
-    public function colorClass(): string
+    public function classes(): array
+    {
+        return array_filter([
+            'btn',
+            $this->sizeClass(),
+            $this->colorClass(),
+            $this->stateClass(),
+        ]);
+    }
+
+    private function stateClass(): string
+    {
+        return match ($this->state) {
+            'active'   => 'btn-active',
+            'disabled' => 'btn-disabled',
+            default    => '',
+        };
+    }
+
+    private function colorClass(): string
     {
         return match ($this->color) {
             'neutral'   => 'btn-neutral',
@@ -36,7 +56,7 @@ class Button extends Component
         };
     }
 
-    public function sizeClass(): string
+    private function sizeClass(): string
     {
         return match ($this->size) {
             'xs'    => 'btn-xs',

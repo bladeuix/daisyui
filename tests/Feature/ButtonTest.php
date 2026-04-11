@@ -36,3 +36,12 @@ it(description: 'can render button with color class', closure: function () {
 
     $view->assertSee(value: '<button class="btn btn-md btn-primary">', escape: false);
 });
+
+it(description: 'can render button with state class', closure: function () {
+    $view = $this->component(
+        componentClass: Button::class,
+        data: ['state' => 'disabled']
+    );
+
+    $view->assertSee(value: '<button class="btn btn-md btn-disabled">', escape: false);
+});
