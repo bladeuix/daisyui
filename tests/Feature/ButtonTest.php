@@ -19,7 +19,7 @@ it(description: 'can render button with default classes', closure: function () {
     ]);
 });
 
-it(description: 'can render button with sizes', closure: function () {
+it(description: 'can render button with sizes class', closure: function () {
     $view = $this->component(
         componentClass: Button::class,
         data: ['size' => 'lg']
@@ -28,7 +28,7 @@ it(description: 'can render button with sizes', closure: function () {
     $view->assertSee(value: '<button class="btn btn-lg">', escape: false);
 });
 
-it(description: 'can render button with colors', closure: function () {
+it(description: 'can render button with color class', closure: function () {
     $view = $this->component(
         componentClass: Button::class,
         data: ['color' => 'primary']
