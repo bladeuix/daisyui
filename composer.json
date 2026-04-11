@@ -39,7 +39,11 @@
     "archive": {
         "exclude": [
             "/.github",
-            "/.gitignore"
+            "/.gitignore",
+            "/.gitattributes",
+            "/.editorconfig",
+            "/phpunit.xml",
+            "pint.json"
         ]
     },
     "config": {
