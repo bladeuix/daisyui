@@ -38,20 +38,20 @@ it(description: 'can render button with all shape classes', closure: function ()
     $view->assertSee(value: '<button class="btn btn-wide">', escape: false);
 });
 
-it(description: 'can render button with soft class', closure: function () {
-    $view = $this->blade(template: '<x-daisyui::button :soft="true"></x-daisyui::button>');
+it(description: 'can render button with soft variant', closure: function () {
+    $view = $this->blade(template: '<x-daisyui::button variant="soft"></x-daisyui::button>');
 
     $view->assertSee(value: '<button class="btn btn-soft">', escape: false);
 });
 
-it(description: 'can render button with outline solid style', closure: function () {
-    $view = $this->blade(template: '<x-daisyui::button outline="solid"></x-daisyui::button>');
+it(description: 'can render button with outline variant', closure: function () {
+    $view = $this->blade(template: '<x-daisyui::button variant="outline"></x-daisyui::button>');
 
     $view->assertSee(value: '<button class="btn btn-outline">', escape: false);
 });
 
-it(description: 'can render button with outline dashed style', closure: function () {
-    $view = $this->blade(template: '<x-daisyui::button outline="dashed"></x-daisyui::button>');
+it(description: 'can render button with dashed variant', closure: function () {
+    $view = $this->blade(template: '<x-daisyui::button variant="dashed"></x-daisyui::button>');
 
     $view->assertSee(value: '<button class="btn btn-dash">', escape: false);
 });

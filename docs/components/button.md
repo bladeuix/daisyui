@@ -107,95 +107,101 @@ Buttons allow the user to take actions or make choices.
 </div>
 ```
 
-### Soft buttons
-
-```html
-<x-daisyui::button soft>Default</x-daisyui::button>
-<x-daisyui::button soft color="primary">Primary</x-daisyui::button>
-<x-daisyui::button soft color="secondary">Secondary</x-daisyui::button>
-<x-daisyui::button soft color="accent">Accent</x-daisyui::button>
-<x-daisyui::button soft color="info">Info</x-daisyui::button>
-<x-daisyui::button soft color="success">Success</x-daisyui::button>
-<x-daisyui::button soft color="warning">Warning</x-daisyui::button>
-<x-daisyui::button soft color="error">Error</x-daisyui::button>
-```
-
-```html +parse
-<div class="component-preview">
-    <x-daisyui::button soft>Default</x-daisyui::button>
-    <x-daisyui::button soft color="primary">Primary</x-daisyui::button>
-    <x-daisyui::button soft color="secondary">Secondary</x-daisyui::button>
-    <x-daisyui::button soft color="accent">Accent</x-daisyui::button>
-    <x-daisyui::button soft color="info">Info</x-daisyui::button>
-    <x-daisyui::button soft color="success">Success</x-daisyui::button>
-    <x-daisyui::button soft color="warning">Warning</x-daisyui::button>
-    <x-daisyui::button soft color="error">Error</x-daisyui::button>
-</div>
-```
-
-### Outline buttons
-
-```html
-<x-daisyui::button outline="solid">Default</x-daisyui::button>
-<x-daisyui::button outline="solid" color="primary">Primary</x-daisyui::button>
-<x-daisyui::button outline="solid" color="secondary">Secondary</x-daisyui::button>
-<x-daisyui::button outline="solid" color="accent">Accent</x-daisyui::button>
-<x-daisyui::button outline="solid" color="info">Info</x-daisyui::button>
-<x-daisyui::button outline="solid" color="success">Success</x-daisyui::button>
-<x-daisyui::button outline="solid" color="warning">Warning</x-daisyui::button>
-<x-daisyui::button outline="solid" color="error">Error</x-daisyui::button>
-```
-
-```html +parse
-<div class="component-preview">
-    <x-daisyui::button outline="solid">Default</x-daisyui::button>
-    <x-daisyui::button outline="solid" color="primary">Primary</x-daisyui::button>
-    <x-daisyui::button outline="solid" color="secondary">Secondary</x-daisyui::button>
-    <x-daisyui::button outline="solid" color="accent">Accent</x-daisyui::button>
-    <x-daisyui::button outline="solid" color="info">Info</x-daisyui::button>
-    <x-daisyui::button outline="solid" color="success">Success</x-daisyui::button>
-    <x-daisyui::button outline="solid" color="warning">Warning</x-daisyui::button>
-    <x-daisyui::button outline="solid" color="error">Error</x-daisyui::button>
-</div>
-```
-
-### Dashed buttons
-
-```html
-<x-daisyui::button outline="dashed">Default</x-daisyui::button>
-<x-daisyui::button outline="dashed" color="primary">Primary</x-daisyui::button>
-<x-daisyui::button outline="dashed" color="secondary">Secondary</x-daisyui::button>
-<x-daisyui::button outline="dashed" color="accent">Accent</x-daisyui::button>
-<x-daisyui::button outline="dashed" color="info">Info</x-daisyui::button>
-<x-daisyui::button outline="dashed" color="success">Success</x-daisyui::button>
-<x-daisyui::button outline="dashed" color="warning">Warning</x-daisyui::button>
-<x-daisyui::button outline="dashed" color="error">Error</x-daisyui::button>
-```
-
-```html +parse
-<div class="component-preview">
-    <x-daisyui::button outline="dashed">Default</x-daisyui::button>
-    <x-daisyui::button outline="dashed" color="primary">Primary</x-daisyui::button>
-    <x-daisyui::button outline="dashed" color="secondary">Secondary</x-daisyui::button>
-    <x-daisyui::button outline="dashed" color="accent">Accent</x-daisyui::button>
-    <x-daisyui::button outline="dashed" color="info">Info</x-daisyui::button>
-    <x-daisyui::button outline="dashed" color="success">Success</x-daisyui::button>
-    <x-daisyui::button outline="dashed" color="warning">Warning</x-daisyui::button>
-    <x-daisyui::button outline="dashed" color="error">Error</x-daisyui::button>
-</div>
-```
-
-### Button Variant
+### Button variants
 
 ```html
 <x-daisyui::button variant="ghost">Ghost</x-daisyui::button>
 <x-daisyui::button variant="link">Link</x-daisyui::button>
+<x-daisyui::button variant="soft">Soft</x-daisyui::button>
+<x-daisyui::button variant="outline">Outline</x-daisyui::button>
+<x-daisyui::button variant="dashed">Dashed</x-daisyui::button>
 ```
 
 ```html +parse
 <div class="component-preview">
     <x-daisyui::button variant="ghost">Ghost</x-daisyui::button>
     <x-daisyui::button variant="link">Link</x-daisyui::button>
+    <x-daisyui::button variant="soft">Soft</x-daisyui::button>
+    <x-daisyui::button variant="outline">Outline</x-daisyui::button>
+    <x-daisyui::button variant="dashed">Dashed</x-daisyui::button>
+</div>
+```
+
+#### Soft buttons
+
+```html
+<x-daisyui::button variant="soft">Default</x-daisyui::button>
+<x-daisyui::button variant="soft" color="primary">Primary</x-daisyui::button>
+<x-daisyui::button variant="soft" color="secondary">Secondary</x-daisyui::button>
+<x-daisyui::button variant="soft" color="accent">Accent</x-daisyui::button>
+<x-daisyui::button variant="soft" color="info">Info</x-daisyui::button>
+<x-daisyui::button variant="soft" color="success">Success</x-daisyui::button>
+<x-daisyui::button variant="soft" color="warning">Warning</x-daisyui::button>
+<x-daisyui::button variant="soft" color="error">Error</x-daisyui::button>
+```
+
+```html +parse
+<div class="component-preview">
+    <x-daisyui::button variant="soft">Default</x-daisyui::button>
+    <x-daisyui::button variant="soft" color="primary">Primary</x-daisyui::button>
+    <x-daisyui::button variant="soft" color="secondary">Secondary</x-daisyui::button>
+    <x-daisyui::button variant="soft" color="accent">Accent</x-daisyui::button>
+    <x-daisyui::button variant="soft" color="info">Info</x-daisyui::button>
+    <x-daisyui::button variant="soft" color="success">Success</x-daisyui::button>
+    <x-daisyui::button variant="soft" color="warning">Warning</x-daisyui::button>
+    <x-daisyui::button variant="soft" color="error">Error</x-daisyui::button>
+</div>
+```
+
+#### Outline buttons
+
+```html
+<x-daisyui::button variant="outline">Default</x-daisyui::button>
+<x-daisyui::button variant="outline" color="primary">Primary</x-daisyui::button>
+<x-daisyui::button variant="outline" color="secondary">Secondary</x-daisyui::button>
+<x-daisyui::button variant="outline" color="accent">Accent</x-daisyui::button>
+<x-daisyui::button variant="outline" color="info">Info</x-daisyui::button>
+<x-daisyui::button variant="outline" color="success">Success</x-daisyui::button>
+<x-daisyui::button variant="outline" color="warning">Warning</x-daisyui::button>
+<x-daisyui::button variant="outline" color="error">Error</x-daisyui::button>
+```
+
+```html +parse
+<div class="component-preview">
+    <x-daisyui::button variant="outline">Default</x-daisyui::button>
+    <x-daisyui::button variant="outline" color="primary">Primary</x-daisyui::button>
+    <x-daisyui::button variant="outline" color="secondary">Secondary</x-daisyui::button>
+    <x-daisyui::button variant="outline" color="accent">Accent</x-daisyui::button>
+    <x-daisyui::button variant="outline" color="info">Info</x-daisyui::button>
+    <x-daisyui::button variant="outline" color="success">Success</x-daisyui::button>
+    <x-daisyui::button variant="outline" color="warning">Warning</x-daisyui::button>
+    <x-daisyui::button variant="outline" color="error">Error</x-daisyui::button>
+</div>
+```
+
+#### Dashed buttons
+
+```html
+<x-daisyui::button variant="dashed">Default</x-daisyui::button>
+<x-daisyui::button variant="dashed" color="primary">Primary</x-daisyui::button>
+<x-daisyui::button variant="dashed" color="secondary">Secondary</x-daisyui::button>
+<x-daisyui::button variant="dashed" color="accent">Accent</x-daisyui::button>
+<x-daisyui::button variant="dashed" color="info">Info</x-daisyui::button>
+<x-daisyui::button variant="dashed" color="success">Success</x-daisyui::button>
+<x-daisyui::button variant="dashed" color="warning">Warning</x-daisyui::button>
+<x-daisyui::button variant="dashed" color="error">Error</x-daisyui::button>
+```
+
+```html +parse
+<div class="component-preview">
+    <x-daisyui::button variant="dashed">Default</x-daisyui::button>
+    <x-daisyui::button variant="dashed" color="primary">Primary</x-daisyui::button>
+    <x-daisyui::button variant="dashed" color="secondary">Secondary</x-daisyui::button>
+    <x-daisyui::button variant="dashed" color="accent">Accent</x-daisyui::button>
+    <x-daisyui::button variant="dashed" color="info">Info</x-daisyui::button>
+    <x-daisyui::button variant="dashed" color="success">Success</x-daisyui::button>
+    <x-daisyui::button variant="dashed" color="warning">Warning</x-daisyui::button>
+    <x-daisyui::button variant="dashed" color="error">Error</x-daisyui::button>
 </div>
 ```
 
