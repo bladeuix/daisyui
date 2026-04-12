@@ -101,7 +101,11 @@ Loading shows an animation to indicate that something is loading.
 ## Advance
 
 ```html
-<div class="component-preview" x-data="{ isLoading: true }">
+@php
+    $isLoading = true;
+@endphp
+
+<div class="component-preview" x-data="{ isLoading: {{ $isLoading ? 'true' : 'false' }} }">
     <x-daisyui::loading
             aria-label="Fetching your profile..."
             role="status"
@@ -119,7 +123,11 @@ Loading shows an animation to indicate that something is loading.
 ```
 
 ```html +parse
-<div class="component-preview" x-data="{ isLoading: true }">
+@php
+    $isLoading = true;
+@endphp
+
+<div class="component-preview" x-data="{ isLoading: {{ $isLoading ? 'true' : 'false' }} }">
     <x-daisyui::loading
             aria-label="Fetching your profile..."
             role="status"

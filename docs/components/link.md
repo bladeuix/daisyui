@@ -72,14 +72,46 @@ Link adds the missing underline style to links.
 </p>
 ```
 
+## Responsive link
+
+```html
+<x-daisyui::link class="text-xs md:text-sm lg:text-md xl:text-lg">
+    Responsive Link
+</x-daisyui::link>
+```
+
 ```html +parse
 <div class="component-preview">
-    <p>
-      Tailwind CSS resets the style of links by default.
-      <br />
-      Add "link" class to make it look like a
-      <x-daisyui::link>normal link</x-daisyui::link>
-      again.
-    </p>
+    <x-daisyui::link class="text-xs md:text-sm lg:text-md xl:text-lg">Responsive Link</x-daisyui::link>
+</div>
+```
+
+## Advance
+
+```html
+<x-daisyui::link
+    href="https://github.com/saadeghi/daisyui"
+    target="_blank"
+    rel="noopener noreferrer"
+    title="Visit DaisyUI on GitHub"
+    aria-label="DaisyUI GitHub Repository"
+    onclick="console.log('Link clicked')"
+>
+    GitHub Repository
+</x-daisyui::link>
+```
+
+```html +parse
+<div class="component-preview">
+    <x-daisyui::link
+        href="https://github.com/saadeghi/daisyui"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="Visit DaisyUI on GitHub"
+        aria-label="DaisyUI GitHub Repository"
+        onclick="console.log('Link clicked')"
+    >
+        GitHub Repository
+    </x-daisyui::link>
 </div>
 ```

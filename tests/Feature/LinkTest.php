@@ -17,7 +17,7 @@ it(description: 'can render link with default classes', closure: function () {
 it(description: 'can render link with color class', closure: function () {
     $view = $this->blade(template: "<x-daisyui::link color='primary'></x-daisyui::link>");
 
-    $view->assertSee(value: "<a class='link link-primary'>", escape: false);
+    $view->assertSee(value: '<a class="link link-primary">', escape: false);
 });
 
 it(description: 'can render link with hover class', closure: function () {
