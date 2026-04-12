@@ -59,3 +59,39 @@ it(description: 'can render button with all shape classes', closure: function (s
     ['wide', 'btn-wide'],
     ['block', 'btn-block'],
 ]);
+
+it(description: 'can render button with responsive shape modifiers', closure: function () {
+    $view = $this->component(
+        componentClass: Button::class,
+        data: ['shape' => 'lg:btn-wide xl:btn-block']
+    );
+
+    $view->assertSee(value: '<button class="btn btn-md lg:btn-wide xl:btn-block">', escape: false);
+});
+
+it(description: 'can render button with responsive size modifiers', closure: function () {
+    $view = $this->component(
+        componentClass: Button::class,
+        data: ['size' => 'lg:btn-lg xl:btn-xl']
+    );
+
+    $view->assertSee(value: '<button class="btn lg:btn-lg xl:btn-xl">', escape: false);
+});
+
+it(description: 'can render button with responsive color modifiers', closure: function () {
+    $view = $this->component(
+        componentClass: Button::class,
+        data: ['color' => 'lg:btn-primary xl:btn-secondary']
+    );
+
+    $view->assertSee(value: '<button class="btn btn-md lg:btn-primary xl:btn-secondary">', escape: false);
+});
+
+it(description: 'can render button with responsive state modifiers', closure: function () {
+    $view = $this->component(
+        componentClass: Button::class,
+        data: ['state' => 'lg:btn-active xl:btn-disabled']
+    );
+
+    $view->assertSee(value: '<button class="btn btn-md lg:btn-active xl:btn-disabled">', escape: false);
+});

@@ -41,7 +41,7 @@ class Button extends Component
             'circle' => 'btn-circle',
             'wide'   => 'btn-wide',
             'block'  => 'btn-block',
-            default  => '',
+            default  => $this->shape ?? '',
         };
     }
 
@@ -50,7 +50,7 @@ class Button extends Component
         return match ($this->state) {
             'active'   => 'btn-active',
             'disabled' => 'btn-disabled',
-            default    => '',
+            default    => $this->state ?? '',
         };
     }
 
@@ -65,7 +65,7 @@ class Button extends Component
             'success'   => 'btn-success',
             'warning'   => 'btn-warning',
             'error'     => 'btn-error',
-            default     => '',
+            default     => $this->color ?? '',
         };
     }
 
@@ -76,7 +76,7 @@ class Button extends Component
             'sm'    => 'btn-sm',
             'lg'    => 'btn-lg',
             'xl'    => 'btn-xl',
-            default => 'btn-md',
+            default => $this->size ?? 'btn-md',
         };
     }
 }

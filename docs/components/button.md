@@ -21,11 +21,8 @@ Buttons allow the user to take actions or make choices.
     <x-daisyui::button>Default</x-daisyui::button>
 </div>
 ```
-## API
 
 ### Button sizes
-
-Use `size` attribute to control button size. e.g `lg` will render `btn-lg` class.
 
 ```blade
 <x-daisyui::button size="xs">Extra Small</x-daisyui::button>
@@ -43,6 +40,10 @@ Use `size` attribute to control button size. e.g `lg` will render `btn-lg` class
 <x-daisyui::button size="xl">Extra large</x-daisyui::button>
 ```
 
+```blade
+<x-daisyui::button size="lg:btn-lg">Responsive</x-daisyui::button>
+```
+
 ```html +parse
 <div class="component-preview">
     <x-daisyui::button size="xs">Extra Small </x-daisyui::button>
@@ -54,8 +55,6 @@ Use `size` attribute to control button size. e.g `lg` will render `btn-lg` class
 ```
 
 ### Button colors
-
-Use `color` attribute to control button color. e.g `primary` will render `btn-primary` class.
 
 ```blade
 <x-daisyui::button color="neutral">Neutral</x-daisyui::button>
@@ -82,6 +81,10 @@ Use `color` attribute to control button color. e.g `primary` will render `btn-pr
 <x-daisyui::button color="error">Error</x-daisyui::button>
 ```
 
+```blade
+<x-daisyui::button color="lg:btn-primary">Responsive</x-daisyui::button>
+```
+
 ```html +parse
 <div class="component-preview">
     <x-daisyui::button color="neutral">Neutral</x-daisyui::button>
@@ -97,8 +100,6 @@ Use `color` attribute to control button color. e.g `primary` will render `btn-pr
 
 ### Button states
 
-Use `state` attribute to control button state. e.g `active` will render `btn-active` class.
-
 ```blade
 <x-daisyui::button>Normal</x-daisyui::button>
 ```
@@ -107,6 +108,10 @@ Use `state` attribute to control button state. e.g `active` will render `btn-act
 ```
 ```blade
 <x-daisyui::button state="disabled">Disabled</x-daisyui::button>
+```
+
+```blade
+<x-daisyui::button state="lg:btn-active">Responsive</x-daisyui::button>
 ```
 
 ```html +parse
@@ -118,8 +123,6 @@ Use `state` attribute to control button state. e.g `active` will render `btn-act
 ```
 
 ### Button shapes
-
-Use `shape` attribute to control button shape. e.g `wide` will render `btn-wide` class.
 
 ```blade
 <x-daisyui::button shape="square">Square</x-daisyui::button>
@@ -134,6 +137,12 @@ Use `shape` attribute to control button shape. e.g `wide` will render `btn-wide`
 <x-daisyui::button shape="block">Block</x-daisyui::button>
 ```
 
+```blade
+<x-daisyui::button shape="lg:btn-wide xl:btn-block">
+    Responsive Button
+</x-daisyui::button>
+```
+
 ```html +parse
 <div class="component-preview">
     <x-daisyui::button shape="square">
@@ -146,4 +155,3 @@ Use `shape` attribute to control button shape. e.g `wide` will render `btn-wide`
     <x-daisyui::button shape="block">Block</x-daisyui::button>
 </div>
 ```
-
