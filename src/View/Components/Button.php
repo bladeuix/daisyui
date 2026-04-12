@@ -5,22 +5,23 @@ declare(strict_types=1);
 namespace BladeUix\DaisyUi\View\Components;
 
 use Illuminate\View\Component;
-use Illuminate\Contracts\View\View;
 
 class Button extends Component
 {
     public function __construct(
-        public ?string $slot = null,
         public ?string $size = null,
         public ?string $color = null,
         public ?string $state = null,
         public ?string $shape = null,
+        public ?string $variant = null
     ) {
     }
 
-    public function render(): View
+    public function render(): string
     {
-        return view(view: 'daisyui::components.button');
+        return <<<'blade'
+            <button {{ $attributes->class($classes())->merge() }}>{{ $slot }}</button>
+        blade;
     }
 
     public function classes(): array
@@ -29,32 +30,45 @@ class Button extends Component
             'btn',
             $this->sizeClass(),
             $this->colorClass(),
-            $this->stateClass(),
+            $this->variantClass(),
             $this->shapeClass(),
+            $this->stateClass(),
         ]);
     }
 
-    private function shapeClass(): string
+    private function variantClass(): ?string
+    {
+        return match ($this->variant) {
+            'ghost'   => 'btn-ghost',
+            'link'    => 'btn-link',
+            'soft'    => 'btn-soft',
+            'outline' => 'btn-outline',
+            'dashed'  => 'btn-dash',
+            default   => null,
+        };
+    }
+
+    private function shapeClass(): ?string
     {
         return match ($this->shape) {
             'square' => 'btn-square',
             'circle' => 'btn-circle',
             'wide'   => 'btn-wide',
             'block'  => 'btn-block',
-            default  => $this->shape ?? '',
+            default  => null,
         };
     }
 
-    private function stateClass(): string
+    private function stateClass(): ?string
     {
         return match ($this->state) {
             'active'   => 'btn-active',
             'disabled' => 'btn-disabled',
-            default    => $this->state ?? '',
+            default    => null,
         };
     }
 
-    private function colorClass(): string
+    private function colorClass(): ?string
     {
         return match ($this->color) {
             'neutral'   => 'btn-neutral',
@@ -65,18 +79,19 @@ class Button extends Component
             'success'   => 'btn-success',
             'warning'   => 'btn-warning',
             'error'     => 'btn-error',
-            default     => $this->color ?? '',
+            default     => null,
         };
     }
 
-    private function sizeClass(): string
+    private function sizeClass(): ?string
     {
         return match ($this->size) {
             'xs'    => 'btn-xs',
             'sm'    => 'btn-sm',
+            'md'    => 'btn-md',
             'lg'    => 'btn-lg',
             'xl'    => 'btn-xl',
-            default => $this->size ?? 'btn-md',
+            default => null,
         };
     }
 }

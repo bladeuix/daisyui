@@ -30,8 +30,6 @@ This document outlines the basic rules for the project.
 - Each documentation file must include:
     - YAML frontmatter (`title`, `description`, `group`).
     - Usage examples (`## Usage`).
-    - API details for sizes, colors, and states (`## API`).
-    - A comprehensive `## Attributes` table with Name, Default, and Options.
     - A `## Slots` table for available slots.
 
 ### Useful Commands
