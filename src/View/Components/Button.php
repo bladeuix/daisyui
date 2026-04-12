@@ -15,7 +15,8 @@ class Button extends Component
         public ?string $color = null,
         public ?string $state = null,
         public ?string $shape = null,
-        public ?bool $soft = false,
+        public ?bool   $soft = false,
+        public ?string $outline = null,
     ) {
     }
 
@@ -31,9 +32,19 @@ class Button extends Component
             $this->sizeClass(),
             $this->colorClass(),
             $this->soft ? 'btn-soft' : '',
+            $this->outlineClass(),
             $this->shapeClass(),
             $this->stateClass(),
         ]);
+    }
+
+    private function outlineClass(): ?string
+    {
+        return match ($this->outline) {
+            'solid'  => 'btn-outline',
+            'dashed' => 'btn-dash',
+            default  => null,
+        };
     }
 
     private function shapeClass(): ?string

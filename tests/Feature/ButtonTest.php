@@ -64,6 +64,24 @@ it(description: 'can render button with soft class', closure: function () {
     $view->assertSee(value: '<button class="btn btn-soft">', escape: false);
 });
 
+it(description: 'can render button with outline solid style', closure: function () {
+    $view = $this->component(
+        componentClass: Button::class,
+        data: ['outline' => 'solid']
+    );
+
+    $view->assertSee(value: '<button class="btn btn-outline">', escape: false);
+});
+
+it(description: 'can render button with outline dashed style', closure: function () {
+    $view = $this->component(
+        componentClass: Button::class,
+        data: ['outline' => 'dashed']
+    );
+
+    $view->assertSee(value: '<button class="btn btn-dash">', escape: false);
+});
+
 it(description: 'can render button with class modifiers', closure: function () {
     $view = $this->component(
         componentClass: Button::class,
