@@ -13,20 +13,13 @@ class Button extends Component
         public ?string $color = null,
         public ?string $state = null,
         public ?string $shape = null,
-        public string  $variant = ''
-    ) {
-    }
+        public ?string $variant = null
+    ) {}
 
     public function render(): string
     {
         return <<<'blade'
-            <button {{ $attributes->class($classes())->merge() }}>
-                {{ $prefix ?? '' }}
-
-                {{ $slot }}
-
-                {{ $suffix  ?? '' }}
-            </button>
+            <button {{ $attributes->class($classes())->merge() }}>{{ $slot }}</button>
         blade;
     }
 
