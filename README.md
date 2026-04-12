@@ -39,8 +39,8 @@ composer require bladeuix/daisyui
 
 /*Your other @source...*/
 
-+ @source "../../vendor/bladeuix/daisyui/src/View/Components/*.php";
-+ @plugin "daisyui";
+@source "../../vendor/bladeuix/daisyui/src/View/Components/*.php";
+@plugin "daisyui";
 
 /*Your other css utilities...*/
 ```
