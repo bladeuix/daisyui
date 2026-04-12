@@ -29,8 +29,9 @@ This document outlines the basic rules for the project.
 - Component documentation should be in `docs/components/{component}.md`.
 - Each documentation file must include:
     - YAML frontmatter (`title`, `description`, `group`).
-    - Usage examples (`## Usage`).
-    - A `## Slots` table for available slots.
+    - Component title (`# {Component}`) and description.
+    - Basic usage example using ` ```html ` and ` ```html +parse `.
+    - Detailed variation examples in subsections (e.g., `## {Component} sizes`).
 
 ### Useful Commands
 

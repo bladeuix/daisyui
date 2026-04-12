@@ -145,7 +145,7 @@ Buttons allow the user to take actions or make choices.
 ```html +parse
 <div class="component-preview">
     <x-daisyui::button>
-        <span class="loading loading-spinner"></span>
+        <x-daisyui::loading />
         With Prefix
     </x-daisyui::button>
     <x-daisyui::button>
