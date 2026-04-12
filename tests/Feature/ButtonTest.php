@@ -56,6 +56,18 @@ it(description: 'can render button with outline dashed style', closure: function
     $view->assertSee(value: '<button class="btn btn-dash">', escape: false);
 });
 
+it(description: 'can render button with ghost variant', closure: function () {
+    $view = $this->blade(template: '<x-daisyui::button variant="ghost"></x-daisyui::button>');
+
+    $view->assertSee(value: '<button class="btn btn-ghost">', escape: false);
+});
+
+it(description: 'can render button with link variant', closure: function () {
+    $view = $this->blade(template: '<x-daisyui::button variant="link"></x-daisyui::button>');
+
+    $view->assertSee(value: '<button class="btn btn-link">', escape: false);
+});
+
 it(description: 'can render button with class modifiers', closure: function () {
     $view = $this->blade(template: '<x-daisyui::button class="lg:btn-wide xl:btn-block"></x-daisyui::button>');
 
