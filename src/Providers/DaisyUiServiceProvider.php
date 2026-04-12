@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace BladeUix\DaisyUi\Providers;
 
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 
 class DaisyUiServiceProvider extends ServiceProvider
@@ -15,7 +16,7 @@ class DaisyUiServiceProvider extends ServiceProvider
             namespace: 'daisyui'
         );
 
-        \Illuminate\Support\Facades\Blade::componentNamespace(
+        Blade::componentNamespace(
             namespace: 'BladeUix\\DaisyUi\\View\\Components',
             prefix: 'daisyui'
         );
