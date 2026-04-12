@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace BladeUix\DaisyUi\View\Components;
 
 use Illuminate\View\Component;
-use Illuminate\Contracts\View\View;
 
 class Button extends Component
 {
@@ -18,9 +17,17 @@ class Button extends Component
     ) {
     }
 
-    public function render(): View
+    public function render(): string
     {
-        return view(view: 'daisyui::components.button');
+        return <<<'blade'
+            <button {{ $attributes->class($classes())->merge() }}>
+                {{ $prefix ?? '' }}
+
+                {{ $slot }}
+
+                {{ $suffix  ?? '' }}
+            </button>
+        blade;
     }
 
     public function classes(): array
