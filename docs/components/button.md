@@ -174,3 +174,37 @@ Buttons allow the user to take actions or make choices.
     </x-daisyui::button>
 </div>
 ```
+
+
+## Advance
+
+```html
+<x-daisyui::button
+        type="button"
+        onclick="alert('Button clicked!')"
+        id="main-action-btn"
+        name="submit-action"
+        title="Click to trigger an alert"
+        aria-label="Trigger a greeting alert"
+        aria-pressed="false"
+>
+    Button Attributes
+</x-daisyui::button>
+```
+
+```html +parse
+<div class="component-preview">
+    <x-daisyui::button
+            type="button"
+            onclick="alert('Button clicked!')"
+            id="main-action-btn"
+            name="submit-action"
+            title="Click to trigger an alert"
+            aria-label="Trigger a greeting alert"
+            aria-pressed="false"
+    >
+        JS Attributes
+    </x-daisyui::button>
+</div>
+```
+

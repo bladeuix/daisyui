@@ -14,7 +14,8 @@ class Button extends Component
         public ?string $state = null,
         public ?string $shape = null,
         public ?string $variant = null
-    ) {}
+    ) {
+    }
 
     public function render(): string
     {
