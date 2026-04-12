@@ -9,8 +9,8 @@ use Illuminate\View\Component;
 class Progress extends Component
 {
     public function __construct(
-        public mixed $value = null,
-        public mixed $max = 100,
+        public ?int $value = null,
+        public int $max = 100,
         public ?string $color = null
     ) {
     }
