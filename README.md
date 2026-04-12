@@ -13,25 +13,52 @@
 
 ## Installation
 
-You can install the package via Composer:
+### Prerequisites
+
+You need to have daisyUI installed in your project. If you haven't already, you can install it via your terminal:
+
+```bash
+npm i -D daisyui@latest
+```
+
+### Package Installation
+
+Install the BladeUIX DaisyUI package via Composer:
 
 ```bash
 composer require bladeuix/daisyui
+```
+
+### Configure Tailwind CSS
+
+- Ensure that `daisyui` tailwindcss plugin in installed.
+- `../../vendor/bladeuix/daisyui/src/View/Components/*.php` is included in tailwindcss scan files.
+
+```css
+@import "tailwindcss";
+
+/*Your other @source...*/
+
++ @source "../../vendor/bladeuix/daisyui/src/View/Components/*.php";
++ @plugin "daisyui";
+
+/*Your other css utilities...*/
+```
+
+### Basic Usage
+
+Once everything is installed and configured, you can use the components in your Blade templates:
+
+```html
+<x-daisyui::button color="primary">
+    Click Me
+</x-daisyui::button>
 ```
 
 ## Documentation
 
 Full documentation is available at [bladeuix.njoguamos.me.ke/daisyui](https://daisyui.bladeuix.com?source=GitHubRepo).
 
-## Usage
-
-Here is a quick example of how to use a button:
-
-```html
-<x-daisyui::button color="primary" size="lg">
-    Click Me
-</x-daisyui::button>
-```
 
 ## Testing
 
