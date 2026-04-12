@@ -1,7 +1,7 @@
 ---
 title: Loading
 description: Loading shows an animation to indicate that something is loading.
-group: Feedback
+group: Components
 ---
 
 # Loading

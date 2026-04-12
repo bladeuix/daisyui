@@ -1,7 +1,7 @@
 ---
 title: Link
 description: Link adds the missing underline style to links.
-group: Navigation
+group: Components
 ---
 
 # Link

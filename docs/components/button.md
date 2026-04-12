@@ -1,7 +1,7 @@
 ---
 title: Button
 description: Buttons allow the user to take actions or make choices.
-group: Actions
+group: Components
 ---
 
 # Button
