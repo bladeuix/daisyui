@@ -10,13 +10,12 @@ use Illuminate\Contracts\View\View;
 class Button extends Component
 {
     public function __construct(
-        public ?string $slot = null,
         public ?string $size = null,
         public ?string $color = null,
         public ?string $state = null,
         public ?string $shape = null,
         public ?bool   $soft = false,
-        public ?string $outline = null,
+        public ?string $outline = null
     ) {
     }
 
