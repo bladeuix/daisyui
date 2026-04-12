@@ -10,7 +10,7 @@ group: Actions
 
 Buttons allow the user to take actions or make choices.
 
-```blade
+```html
 <x-daisyui::button>
     Default
 </x-daisyui::button>
@@ -24,24 +24,12 @@ Buttons allow the user to take actions or make choices.
 
 ### Button sizes
 
-```blade
+```html
 <x-daisyui::button size="xs">Extra Small</x-daisyui::button>
-```
-```blade
 <x-daisyui::button size="sm">Small</x-daisyui::button>
-```
-```blade
 <x-daisyui::button size="md">Medium</x-daisyui::button>
-```
-```blade
 <x-daisyui::button size="lg">Large</x-daisyui::button>
-```
-```blade
 <x-daisyui::button size="xl">Extra large</x-daisyui::button>
-```
-
-```blade
-<x-daisyui::button size="lg:btn-lg">Responsive</x-daisyui::button>
 ```
 
 ```html +parse
@@ -56,33 +44,15 @@ Buttons allow the user to take actions or make choices.
 
 ### Button colors
 
-```blade
+```html
 <x-daisyui::button color="neutral">Neutral</x-daisyui::button>
-```
-```blade
 <x-daisyui::button color="primary">Primary</x-daisyui::button>
-```
-```blade
 <x-daisyui::button color="secondary">Secondary</x-daisyui::button>
-```
-```blade
 <x-daisyui::button color="accent">Accent</x-daisyui::button>
-```
-```blade
 <x-daisyui::button color="info">Info</x-daisyui::button>
-```
-```blade
 <x-daisyui::button color="success">Success</x-daisyui::button>
-```
-```blade
 <x-daisyui::button color="warning">Warning</x-daisyui::button>
-```
-```blade
 <x-daisyui::button color="error">Error</x-daisyui::button>
-```
-
-```blade
-<x-daisyui::button color="lg:btn-primary">Responsive</x-daisyui::button>
 ```
 
 ```html +parse
@@ -98,19 +68,41 @@ Buttons allow the user to take actions or make choices.
 </div>
 ```
 
+### Soft buttons
+
+```html
+<x-daisyui::button soft>Default</x-daisyui::button>
+<x-daisyui::button soft color="primary">Primary</x-daisyui::button>
+<x-daisyui::button soft color="secondary">Secondary</x-daisyui::button>
+<x-daisyui::button soft color="accent">Accent</x-daisyui::button>
+<x-daisyui::button soft color="info">Info</x-daisyui::button>
+<x-daisyui::button soft color="success">Success</x-daisyui::button>
+<x-daisyui::button soft color="warning">Warning</x-daisyui::button>
+<x-daisyui::button soft color="error">Error</x-daisyui::button>
+```
+
+```html +parse
+<div class="component-preview">
+    <x-daisyui::button soft>Default</x-daisyui::button>
+    <x-daisyui::button soft color="primary">Primary</x-daisyui::button>
+    <x-daisyui::button soft color="secondary">Secondary</x-daisyui::button>
+    <x-daisyui::button soft color="accent">Accent</x-daisyui::button>
+    <x-daisyui::button soft color="info">Info</x-daisyui::button>
+    <x-daisyui::button soft color="success">Success</x-daisyui::button>
+    <x-daisyui::button soft color="warning">Warning</x-daisyui::button>
+    <x-daisyui::button soft color="error">Error</x-daisyui::button>
+</div>
+```
+
 ### Button states
 
-```blade
+```html
 <x-daisyui::button>Normal</x-daisyui::button>
-```
-```blade
 <x-daisyui::button state="active">Active</x-daisyui::button>
-```
-```blade
 <x-daisyui::button state="disabled">Disabled</x-daisyui::button>
 ```
 
-```blade
+```html
 <x-daisyui::button state="lg:btn-active">Responsive</x-daisyui::button>
 ```
 
@@ -124,23 +116,11 @@ Buttons allow the user to take actions or make choices.
 
 ### Button shapes
 
-```blade
+```html
 <x-daisyui::button shape="square">Square</x-daisyui::button>
-```
-```blade
 <x-daisyui::button shape="circle">Circle</x-daisyui::button>
-```
-```blade
 <x-daisyui::button shape="wide">Wide</x-daisyui::button>
-```
-```blade
 <x-daisyui::button shape="block">Block</x-daisyui::button>
-```
-
-```blade
-<x-daisyui::button shape="lg:btn-wide xl:btn-block">
-    Responsive Button
-</x-daisyui::button>
 ```
 
 ```html +parse
@@ -153,5 +133,21 @@ Buttons allow the user to take actions or make choices.
     </x-daisyui::button>
     <x-daisyui::button shape="wide">Wide</x-daisyui::button>
     <x-daisyui::button shape="block">Block</x-daisyui::button>
+</div>
+```
+
+### Responsive button
+
+```html
+<x-daisyui::button class="lg:btn-xl xl:btn-primary xl:btn-block!">
+    Custom CSS Button
+</x-daisyui::button>
+```
+
+```html +parse
+<div class="component-preview">
+    <x-daisyui::button class="lg:btn-xl xl:btn-primary xl:btn-block!">
+        Responsive Button
+    </x-daisyui::button>
 </div>
 ```

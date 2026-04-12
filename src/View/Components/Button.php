@@ -15,6 +15,7 @@ class Button extends Component
         public ?string $color = null,
         public ?string $state = null,
         public ?string $shape = null,
+        public ?bool $soft = false,
     ) {
     }
 
@@ -29,32 +30,33 @@ class Button extends Component
             'btn',
             $this->sizeClass(),
             $this->colorClass(),
-            $this->stateClass(),
+            $this->soft ? 'btn-soft' : '',
             $this->shapeClass(),
+            $this->stateClass(),
         ]);
     }
 
-    private function shapeClass(): string
+    private function shapeClass(): ?string
     {
         return match ($this->shape) {
             'square' => 'btn-square',
             'circle' => 'btn-circle',
             'wide'   => 'btn-wide',
             'block'  => 'btn-block',
-            default  => $this->shape ?? '',
+            default  => null,
         };
     }
 
-    private function stateClass(): string
+    private function stateClass(): ?string
     {
         return match ($this->state) {
             'active'   => 'btn-active',
             'disabled' => 'btn-disabled',
-            default    => $this->state ?? '',
+            default    => null,
         };
     }
 
-    private function colorClass(): string
+    private function colorClass(): ?string
     {
         return match ($this->color) {
             'neutral'   => 'btn-neutral',
@@ -65,18 +67,19 @@ class Button extends Component
             'success'   => 'btn-success',
             'warning'   => 'btn-warning',
             'error'     => 'btn-error',
-            default     => $this->color ?? '',
+            default     => null,
         };
     }
 
-    private function sizeClass(): string
+    private function sizeClass(): ?string
     {
         return match ($this->size) {
             'xs'    => 'btn-xs',
             'sm'    => 'btn-sm',
+            'md'    => 'btn-md',
             'lg'    => 'btn-lg',
             'xl'    => 'btn-xl',
-            default => $this->size ?? 'btn-md',
+            default => null,
         };
     }
 }
